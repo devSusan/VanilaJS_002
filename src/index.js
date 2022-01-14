@@ -1,4 +1,4 @@
-const className = ["bg_purple", "bg_yellow", "bg_blue"];
+const className = ["bg_blue", "bg_purple", "bg_yellow"];
 const doc = document.body;
 const minWidth = window.innerWidth;
 const maxWidth = minWidth + 300;
@@ -9,12 +9,12 @@ const eventHandler = {
     let bg_color;
     removeClassAllColor();
 
-    if (currentWidth > minWidth && currentWidth < maxWidth) {
-        bg_color = className[0];
-    } else if (window.innerWidth > maxWidth) {
-        bg_color = className[1];
-    } else if (window.innerWidth <= minWidth) {
-        bg_color = className[2];
+    if (currentWidth <= minWidth) {
+      bg_color = className[0];
+    } else if (currentWidth < maxWidth) {
+      bg_color = className[1];
+    } else {
+      bg_color = className[2];
     }
     addClass(bg_color);
   }
